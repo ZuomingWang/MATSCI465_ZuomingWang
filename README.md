@@ -45,3 +45,11 @@ To reproduce the environment, run the following commands in your terminal:
    ```bash
    jupyter lab
    ```
+
+## Assignment 02: 4D-STEM & Virtual Detectors
+
+### Virtual Detectors Concept
+
+One of the most powerful features of 4D-STEM is the ability to perform "virtual imaging" post-acquisition. Unlike conventional STEM, where physical detectors (like BF or ADF) are fixed in hardware during the experiment, 4D-STEM records the full 2D diffraction pattern at every scan position.
+
+This allows us to "replay" the experiment in software by defining virtual detectors. By creating digital masks (e.g., circular, annular, or custom shapes) on the diffraction plane, we can integrate the signal falling onto these specific regions to reconstruct images. This means we can generate Bright Field (BF), Annular Dark Field (ADF), or other contrast modes from the exact same dataset long after the microscope session is finished, essentially optimizing the detector geometry for the specific features of interest without needing to rescan the sample.
