@@ -1,0 +1,6 @@
+Method,F1-Score,Silhouette_Score
+SVM,0.9823308317951045,
+RandomForest,1.0,
+KMeans (k=3),,0.24194483909010836
+KMeans (k=5),,0.24130853010225686
+KMeans (k=7),,0.21014162039981713
