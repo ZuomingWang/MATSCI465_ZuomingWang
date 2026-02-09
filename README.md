@@ -22,6 +22,16 @@ The raw 4D-STEM datasets and other experimental data are located in the `raw_dat
 │   └── 11500X*.png                   # (Required for Assignment 04 DOPAD)
 ├── assignment_01_output/             # Generated outputs for Week 01
 ├── assignment_02_output/             # Generated outputs for Week 02
+│   ├── data/
+│   │   ├── processed/            # Processed data output
+│   │   └── raw/                  # Reference raw 4D-STEM datasets
+│   │       ├── Diffraction SI_Au_Calib.dm4
+│   │       └── Si-SiGe.dm4
+│   ├── figures/                  # Final figures
+│   │   ├── key_figure_1_virtual_detectors.png  # Virtual detector setup
+│   │   ├── key_figure_2_virtual_adf_clean.png  # Cleaned ADF image
+│   │   └── key_figure_3_line_profile.png       # Line profile analysis
+│   └── src/                      # Source code (if applicable)
 ├── assignment_04_output/             # Generated outputs for Week 04
 │   ├── data/
 │   │   ├── deep_learning/        # Generated datasets for DL Tasks 
@@ -122,9 +132,11 @@ The analysis is performed in a dedicated Conda environment named `matsci465`.
 * **Notebook:** `assignment_02_setup.ipynb`
 * **Virtual Detectors Concept:** 4D-STEM records the full 2D diffraction pattern at every scan position, allowing for "virtual imaging" post-acquisition.
 
-One of the most powerful features of 4D-STEM is the ability to perform **"virtual imaging"** post-acquisition.
+How virtual detectors in 4D-STEM enable post-acquisition “re-playing” of the experiment by redefining detector geometry in software?
 
-Unlike conventional STEM, where physical detectors (like Bright Field or Annular Dark Field) are fixed in hardware during the experiment, 4D-STEM records the full 2D diffraction pattern at every scan position.
+In 4D-STEM, the microscope records a complete 2D diffraction pattern at every pixel of the scan, preserving the full angular distribution of scattered electrons rather than integrating them into a single intensity value. Because this rich 4D dataset is stored, users can create "virtual detectors" by defining software masks—such as circles, annuli, or quadrants—over the recorded diffraction patterns to select specific scattering angles. "Re-playing" the experiment involves mathematically integrating the electron counts within these specific masks to reconstruct images as if physical detectors with those geometries had been used. This capability allows a researcher to generate multiple contrast modes, such as Bright Field, Annular Dark Field, or Differential Phase Contrast, from a single exposure. Consequently, signal collection angles can be optimized and new imaging conditions explored post-acquisition without ever needing to rescan the sample.
+
+One of the most powerful features of 4D-STEM is the ability to perform **virtual imaging** post-acquisition. Unlike conventional STEM, where physical detectors (like Bright Field or Annular Dark Field) are fixed in hardware during the experiment, 4D-STEM records the full 2D diffraction pattern at every scan position.
 
 This allows us to "replay" the experiment in software by defining virtual detectors:
 
